@@ -1,0 +1,24 @@
+npm install --save inquirer
+npm ERR! code EEXIST
+npm ERR! syscall mkdir
+npm ERR! path /Users/sarosh/.npm/_cacache/content-v2/sha512/bf/73
+npm ERR! errno -13
+npm ERR! EACCES: permission denied, mkdir '/Users/sarosh/.npm/_cacache/content-v2/sha512/bf/73'
+npm ERR! File exists: /Users/sarosh/.npm/_cacache/content-v2/sha512/bf/73
+npm ERR! Remove the existing file and try again, or run npm
+npm ERR! with --force to overwrite files recklessly.
+
+"SLOVING"
+It seems like you're encountering a permission issue while trying to install the inquirer package using npm.
+This could be due to insufficient permissions to create directories in your npm cache directory.
+
+a)To resolve this, you can try the following steps:
+
+Run the command with elevated privileges:
+sudo npm install --save inquirer
+b)If you don't want to use sudo, you can change the ownership of the npm cache directory to your user:
+sudo chown -R$(whoami) ~/.npm
+If you're still facing issues, you can try clearing npm's cache and then installing the package again:
+npm cache clean --force
+npm install --save inquire
+These steps should help you resolve the permission issue and install the inquirer package successfully.
